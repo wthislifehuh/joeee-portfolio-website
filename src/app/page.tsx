@@ -21,7 +21,7 @@ export default function Home() {
     if (!mounted) return null;
 
     return (
-        <main className="relative min-h-screen overflow-x-hidden">
+        <main className="relative min-h-screen overflow-x-clip">
             <StarBackground />
             <FloatingDock />
             <HeroSection />
