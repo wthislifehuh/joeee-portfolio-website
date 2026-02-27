@@ -1,6 +1,6 @@
 "use client";
 
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -71,6 +71,15 @@ export function Footer() {
             aria-label="GitHub"
           >
             <FaGithub className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.instagram.com/joe___ee/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-white/10 text-white hover:bg-primary transition-all"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="w-5 h-5" />
           </a>
         </div>
 
