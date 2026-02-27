@@ -88,8 +88,8 @@ export function ExperienceSection() {
         <div className="relative mb-[50vh] z-10">
           {/* Section Header */}
           <div className="sticky top-[15vh] md:top-[20vh] z-20 text-center mb-12 pointer-events-none">
-            <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">What Skills I Have</p>
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">My Experience</h2>
+            <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">What I have learnt</p>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">Technical Skills</h2>
           </div>
 
           {/* Technical Skills */}
@@ -147,8 +147,8 @@ export function ExperienceSection() {
         {/* Work Experience Section */}
         <div className="relative mb-[40vh] z-10">
           <div className="sticky top-[15vh] md:top-[20vh] z-20 text-center mb-12 pointer-events-none">
-            <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">My personal & professional development</p>
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">Work</h2>
+            <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">My professional development</p>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">Work Experience</h2>
           </div>
 
           <ScrollStack className="w-full relative" itemDistance={20} stackPosition="35%" scaleEndPosition="35%" pinEndPosition="8vh" useWindowScroll={true}>
