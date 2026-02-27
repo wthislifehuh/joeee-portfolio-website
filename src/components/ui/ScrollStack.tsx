@@ -22,6 +22,7 @@ interface ScrollStackProps {
     itemStackDistance?: number;
     stackPosition?: string;
     scaleEndPosition?: string;
+    pinEndPosition?: string;
     baseScale?: number;
     scaleDuration?: number;
     rotationAmount?: number;
@@ -38,6 +39,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     itemStackDistance = 30,
     stackPosition = '20%',
     scaleEndPosition = '10%',
+    pinEndPosition = '50%',
     baseScale = 0.85,
     scaleDuration = 0.5,
     rotationAmount = 0,
@@ -105,6 +107,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         const { scrollTop, containerHeight } = getScrollData();
         const stackPositionPx = parsePercentage(stackPosition, containerHeight);
         const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
+        const pinEndPositionPx = pinEndPosition.includes('%') ? parsePercentage(pinEndPosition, containerHeight) : parseFloat(pinEndPosition);
+        // Note: using simple parsing since viewport heights are common in layout sync
 
         // Always query from scrollerRef to prevent cross-contamination if multiple stacks exist
         const endElement = scrollerRef.current?.querySelector('.scroll-stack-end') as HTMLElement;
@@ -119,7 +123,13 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
             const triggerEnd = cardTop - scaleEndPositionPx;
             const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
-            const pinEnd = endElementTop - containerHeight / 2;
+
+            // Allow explicit vh values to sync with CSS sticky offsets
+            let pinOffset = pinEndPositionPx;
+            if (typeof pinEndPosition === 'string' && pinEndPosition.endsWith('vh')) {
+                pinOffset = (parseFloat(pinEndPosition) / 100) * containerHeight;
+            }
+            const pinEnd = endElementTop - pinOffset;
 
             const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
             const targetScale = baseScale + i * itemScale;
@@ -195,6 +205,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         itemStackDistance,
         stackPosition,
         scaleEndPosition,
+        pinEndPosition,
         baseScale,
         rotationAmount,
         blurAmount,
@@ -314,6 +325,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         itemStackDistance,
         stackPosition,
         scaleEndPosition,
+        pinEndPosition,
         baseScale,
         scaleDuration,
         rotationAmount,
