@@ -333,7 +333,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         useWindowScroll,
         onStackComplete,
         setupLenis,
-        updateCardTransforms
+        updateCardTransforms,
+        React.Children.count(children)
     ]);
 
     return (
