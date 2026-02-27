@@ -1,21 +1,32 @@
 "use client";
 
 import { GraduationCap, Code2 } from "lucide-react";
+import ProfileCard from "../ui/ProfileCard";
 
 export function AboutSection() {
   return (
     <section id="about" className="relative py-24 px-4">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
-        {/* Left Column: Image */}
-        <div className="w-full lg:w-5/12 flex-shrink-0">
-          <div className="float w-72 h-72 md:w-80 md:h-80 lg:w-full lg:max-w-md lg:aspect-square mx-auto relative mt-4 lg:mt-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary to-purple-600 rounded-2xl rotate-6 opacity-50" />
-            <div className="relative w-full h-full bg-card rounded-2xl border border-primary/30 overflow-hidden flex items-center justify-center">
-              <div className="text-center p-6">
-                <span className="text-6xl mb-4 block"></span>
-                <p className="text-white/60 text-sm">Your Photo Here</p>
-              </div>
-            </div>
+        {/* Left Column: Profile Card */}
+        <div className="w-full lg:w-5/12 flex-shrink-0 z-10">
+          <div className="w-full max-w-sm mx-auto mt-4 lg:mt-8">
+            <ProfileCard
+              name="Joe Ee"
+              title="Software & AI Engineer"
+              handle="joeee"
+              status="Online"
+              contactText="Catch Me"
+              avatarUrl="/joeee_without_bg.png"
+              showUserInfo
+              enableTilt={true}
+              enableMobileTilt
+              onContactClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              behindGlowColor="rgba(192, 132, 252, 0.3)"
+              behindGlowEnabled
+              innerGradient="linear-gradient(145deg, rgba(88,28,135,0.4) 0%, rgba(216,180,254,0.15) 100%)"
+            />
           </div>
         </div>
 
@@ -85,14 +96,14 @@ export function AboutSection() {
           </div>
 
           {/* CTA Button */}
-          <div className="text-center lg:text-left pt-2">
+          {/* <div className="text-center lg:text-left pt-2">
             <a
               href="#contact"
               className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-all btn-glow border border-transparent shadow-[0_0_15px_rgba(232,121,249,0.3)]"
             >
               Catch Me!
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
