@@ -16,7 +16,7 @@ export function ContactSection() {
     console.log("Form submitted:", formData);
     // Reset form
     setFormData({ name: "", email: "", message: "" });
-    alert("Message sent! (This is a demo - connect to your backend)");
+    alert("Message failed to be sent! Try again later.");
   };
 
   return (
