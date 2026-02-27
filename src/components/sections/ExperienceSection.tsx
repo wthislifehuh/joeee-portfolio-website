@@ -32,9 +32,22 @@ const devOps = [
 const workExperience = [
   {
     company: "GDEX Berhad Sdn. Bhd.",
-    role: "AI Specialist",
+    role: "AI Specialist (Contract-based)",
     period: "Feb 2025 - Mar 2026",
     icon: "/gdex_logo.png",
+    color: "from-white to-white",
+    highlights: [
+      "Architected AI-powered OCR and Parcel Delivery Verification systems",
+      "Fine-tuned LLM Models (Gemini, Nova AI) using Python and PyTorch",
+      "Automated extraction workflows, boosting efficiency >50%",
+      "Designed scalable cloud-based AI architecture on AWS",
+    ],
+  },
+  {
+    company: "Real-Analytics Sdn. Bhd.",
+    role: "Contract AI Engineer (Project-based)",
+    period: "Feb 2025 - Mar 2026",
+    icon: "/real_analytics_logo.png",
     color: "from-white to-white",
     highlights: [
       "Architected AI-powered OCR and Parcel Delivery Verification systems",
@@ -145,7 +158,7 @@ export function ExperienceSection() {
         </div>
 
         {/* Work Experience Section */}
-        <div className="relative mb-[40vh] z-10">
+        <div className="relative mb-[50vh] z-10">
           <div className="sticky top-[15vh] md:top-[20vh] z-20 text-center mb-12 pointer-events-none">
             <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">My professional development</p>
             <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">Work Experience</h2>
