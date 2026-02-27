@@ -1,0 +1,16 @@
+.scroll-float {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* Center since most sections center headers */
+}
+
+.scroll-float-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.char {
+    display: inline-block;
+}

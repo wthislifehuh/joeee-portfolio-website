@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 235 25% 8%;
+        --foreground: 0 0% 100%;
+        --card: 235 30% 12%;
+        --card-foreground: 0 0% 100%;
+        --popover: 235 30% 12%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 292 84% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 235 30% 18%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 235 20% 20%;
+        --muted-foreground: 235 10% 60%;
+        --accent: 292 84% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 235 30% 20%;
+        --input: 235 30% 18%;
+        --ring: 292 84% 60%;
+        --radius: 1rem;
+    }
+
+    .dark {
+        --background: 235 25% 8%;
+        --foreground: 0 0% 100%;
+        --card: 235 30% 12%;
+        --card-foreground: 0 0% 100%;
+        --popover: 235 30% 12%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 292 84% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 235 30% 18%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 235 20% 20%;
+        --muted-foreground: 235 10% 60%;
+        --accent: 292 84% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 235 30% 20%;
+        --input: 235 30% 18%;
+        --ring: 292 84% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+/* Typing animation */
+@keyframes typing {
+
+    0%,
+    100% {
+        width: 0
+    }
+
+    50% {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        border-color: transparent
+    }
+
+    51%,
+    100% {
+        border-color: #e879f9
+    }
+}
+
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #e879f9;
+    animation: typing 4s steps(20) infinite, blink 0.8s step-end infinite;
+}
+
+/* Star background */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Floating animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #e879f9 0%, #8b5cf6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card glow effect */
+.card-glow {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(232, 121, 249, 0.3);
+}
+
+/* Wave animation */
+.wave-divider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Dock navigation */
+.dock-nav {
+    backdrop-filter: blur(20px);
+    background: rgba(26, 26, 62, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll indicator */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.scroll-indicator {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Section fade in */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Pink glow button */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-glow:hover::before {
+    left: 100%;
+}
+
+/* Skills badge */
+.skill-badge {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-badge::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e879f9;
+    box-shadow: 0 0 10px #e879f9;
+}
