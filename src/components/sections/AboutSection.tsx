@@ -90,7 +90,7 @@ export function AboutSection() {
               href="#contact"
               className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-all btn-glow border border-transparent shadow-[0_0_15px_rgba(232,121,249,0.3)]"
             >
-              Let&apos;s Talk!
+              Catch Me!
             </a>
           </div>
         </div>
