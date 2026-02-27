@@ -2,37 +2,78 @@
 
 const achievements = [
   {
-    organization: "IEEE AiDAS 2024",
-    role: "Published Author",
-    period: "2024",
-    icon: "📄",
-    color: "from-blue-500 to-indigo-600",
+    organization: "UTAR Kampar Computer Society",
+    role: "Logistics Manager - Enlight 4.0",
+    period: "Feb 2024 - Jun 2024",
+    icon: "🚌",
+    color: "from-blue-400 to-indigo-500",
     highlights: [
-      "J. E. Ho, B. Y. Ooi and M. Westner, 'Application Integration Framework for Large Language Models'",
-      "Presented at the 2024 5th International Conference on Artificial Intelligence and Data Sciences (AiDAS)",
-      "Bangkok, Thailand, 2024, pp. 1-6"
+      "Coordinated an industrial visit to Hilti, Alibaba Cloud, PayNet, AIA Digital+, PPG, and Edward Lifescience for 40 students.",
+      "Managed logistics, scheduling, transportation, and accommodation.",
     ],
   },
   {
-    organization: "Alibaba Cloud",
-    role: "Certified Associate",
-    period: "Issued Sep 2024",
-    icon: "🏅",
-    color: "from-orange-500 to-red-500",
+    organization: "UTAR Kampar Computer Society",
+    role: "Chairperson - UTAR-Deloitte Resume Workshop",
+    period: "Apr 2024",
+    icon: "📝",
+    color: "from-green-400 to-emerald-600",
     highlights: [
-      "Credential ID: IACA01240900151798L",
-      "Demonstrated core knowledge in cloud computing and Alibaba Cloud services",
+      "Organized a resume workshop in collaboration with Deloitte.",
+      "Successfully attracted and engaged over 100 student participants.",
     ],
   },
   {
-    organization: "AWS Academy",
-    role: "Graduate - Cloud Foundations",
-    period: "Issued Aug 2024",
-    icon: "🎓",
-    color: "from-yellow-500 to-orange-600",
+    organization: "Universiti Tunku Abdul Rahman (UTAR)",
+    role: "Vice Secretary - UTAR-FICT CTF Competition",
+    period: "Jul 2023",
+    icon: "🚩",
+    color: "from-red-400 to-rose-600",
     highlights: [
-      "Completed AWS Academy Cloud Foundations comprehensive curriculum",
-      "Validated foundational knowledge of AWS Cloud concepts and basic security",
+      "Assisted in coordinating the UTAR-FICT Capture The Flag (CTF) competition.",
+    ],
+  },
+  {
+    organization: "UTAR Kampar Computer Society",
+    role: "Program Manager - AR Workshop",
+    period: "Jun 2023 - Jul 2023",
+    icon: "�️",
+    color: "from-purple-400 to-fuchsia-600",
+    highlights: [
+      "Coordinated program workflows, speaker engagements, and technical setups.",
+      "Registered and managed over 50 participants for an immersive AR experience.",
+    ],
+  },
+  {
+    organization: "UTAR Kampar Computer Society",
+    role: "Chairperson - UTAR-Deloitte Coding Workshop",
+    period: "Apr 2023",
+    icon: "💻",
+    color: "from-teal-400 to-cyan-600",
+    highlights: [
+      "Collaborated with Deloitte Consulting to conduct a coding workshop.",
+      "Engaged more than 100 students in UTAR.",
+    ],
+  },
+  {
+    organization: "UTAR Kampar Computer Society",
+    role: "Secretary - Flutter Workshop",
+    period: "Mar 2023 - Apr 2023",
+    icon: "📱",
+    color: "from-sky-400 to-blue-500",
+    highlights: [
+      "Facilitated administrative and organizational tasks for the Flutter Workshop.",
+    ],
+  },
+  {
+    organization: "UTAR Kampar Computer Society",
+    role: "Publicity Manager - Enlight Your World 3.0",
+    period: "Feb 2023 - Jun 2023",
+    icon: "📢",
+    color: "from-orange-400 to-amber-500",
+    highlights: [
+      "Coordinated an industrial visitation event to PayNet, Fusionex, Alibaba Cloud, and AIA Digital+ for 80 students.",
+      "Led content creation by designing 20+ posts, producing 3+ promotional videos, and creating merchandise.",
     ],
   },
 ];
@@ -43,14 +84,15 @@ export function LeadershipSection() {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">Publications & Certifications</h2>
+          <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">What I Have Done in Uni</p>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">Leadership</h2>
         </div>
 
         {/* Leadership Cards */}
         <div className="space-y-6">
           {achievements.map((role) => (
             <div
-              key={role.organization}
+              key={role.role}
               className="card-glow bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20"
             >
               {/* Organization Header */}

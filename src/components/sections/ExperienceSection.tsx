@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollStack, { ScrollStackItem } from '@/components/ui/ScrollStack';
-
+import Image from 'next/image';
 const aiMlSkills = [
   "LLMs (Gemini, Claude, GPT)",
   "TensorFlow",
@@ -34,8 +34,8 @@ const workExperience = [
     company: "GDEX Berhad Sdn. Bhd.",
     role: "AI Specialist",
     period: "Feb 2025 - Mar 2026",
-    icon: "🤖",
-    color: "from-blue-500 to-cyan-500",
+    icon: "/gdex_logo.png",
+    color: "from-white to-white",
     highlights: [
       "Architected AI-powered OCR and Parcel Delivery Verification systems",
       "Fine-tuned LLM Models (Gemini, Nova AI) using Python and PyTorch",
@@ -45,9 +45,9 @@ const workExperience = [
   },
   {
     company: "Hilti Asia IT Services",
-    role: "DevOps Engineer Intern",
+    role: "IT Business Analyst/DevOps Engineer Intern",
     period: "Oct 2024 - Jan 2025",
-    icon: "☁️",
+    icon: "/hilti_logo.png",
     color: "from-red-500 to-red-700",
     highlights: [
       "Coordinated end-to-end delivery of CloudSSO revamp with 100% uptime",
@@ -59,8 +59,8 @@ const workExperience = [
     company: "Universiti Tunku Abdul Rahman",
     role: "Research Assistant",
     period: "Sep 2024 - Nov 2024",
-    icon: "🔬",
-    color: "from-purple-600 to-purple-800",
+    icon: "/utar_logo.png",
+    color: "from-white to-white",
     highlights: [
       "Designed LLM framework for structured data extraction",
       "Improved pipeline accuracy by 38% through prompt optimization",
@@ -71,8 +71,8 @@ const workExperience = [
     company: "Axcell Solutions Sdn. Bhd.",
     role: "Junior Software Developer",
     period: "Nov 2023 - Oct 2024",
-    icon: "💻",
-    color: "from-green-500 to-green-700",
+    icon: "/axcell_logo.png",
+    color: "from-white to-white",
     highlights: [
       "Developed responsive promotional websites using WordPress",
       "Integrated HTML websites with Vue.js, improving reusability by 43%",
@@ -160,7 +160,11 @@ export function ExperienceSection() {
                   {/* Company Header */}
                   <div className="text-center mb-4">
                     <div className={`w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br ${job.color} flex items-center justify-center text-3xl`}>
-                      {job.icon}
+                      {job.icon.startsWith('/') ? (
+                        <Image src={job.icon} alt={job.company} width={64} height={64} className="rounded-xl object-contain" />
+                      ) : (
+                        <span>{job.icon}</span>
+                      )}
                     </div>
                     <h4 className="text-lg font-medium text-primary">{job.company}</h4>
                     <p className="text-white font-semibold">{job.role}</p>

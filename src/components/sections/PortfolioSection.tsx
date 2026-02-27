@@ -6,37 +6,46 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
     {
-        title: "Large Language Model Application Integration",
+        title: "Large Language Model Application Integration for Extracting Unstructured Data",
         description: "Novel framework integrating LLMs into data processing pipelines for structured extraction, achieving 96.93% accuracy.",
-        image: "https://ext.same-assets.com/2029008001/2779338015.png",
+        image: "/extscan.png",
         github: "https://github.com/wthislifehuh",
-        demo: "#",
+        demo: "https://youtu.be/dqciRTrXsdI",
+        tags: ["PyQT", "Python", "LLMs"],
+    },
+    {
+        title: "Parcel/Package Delivery Detection System",
+        description: "Parcel detection is a specific application of object detection, where the goal is to identify and locate parcels (packages) within images and match it with sets of condition for proof of delivery (POD)",
+        image: "/parcel_detection.png",
+        github: "https://github.com/wthislifehuh",
+        demo: "https://youtu.be/GuoBpATcDPo",
         tags: ["PyQT", "Python", "LLMs"],
     },
     {
         title: "Portable Intruder Detector System",
         description: "Achieved 98.7% sub-2.3s detection using ML and image processing to detect human and animal intruders.",
-        image: "https://ext.same-assets.com/2029008001/1951357683.png",
-        github: "https://github.com/wthislifehuh",
+        image: "/portable_detector.jpg",
+        github: "https://github.com/wthislifehuh/Gnome-Portable-Intruder-Detector",
         demo: "#",
         tags: ["OpenCV", "DeepFace", "MongoDB", "SQLite"],
     },
     {
-        title: "AR Human Connection Application",
+        title: "AR Human Connection Application - Resonate",
         description: "AR-based app enhancing communication via real-time emotional context transcription and AI translation.",
-        image: "https://ext.same-assets.com/2029008001/785434078.png",
-        github: "https://github.com/wthislifehuh",
-        demo: "#",
+        image: "/resonate.png",
+        github: "https://github.com/wthislifehuh/Resonate",
+        demo: "https://playful-router-dca.notion.site/Resonate-71af9fed8e6b49cebecfa28ba94853c7",
         tags: ["ViroReact", "React Native", "TypeScript", "LLMs"],
     },
     {
-        title: "AR Travel Application",
+        title: "AR Travel Application - Memorable",
         description: "Travel app exploring landmarks through NFC-triggered content, ARCore interactions, and AI-powered chats.",
-        image: "https://ext.same-assets.com/2029008001/1085034331.png",
-        github: "https://github.com/wthislifehuh",
+        image: "/memorable.png",
+        github: "https://github.com/wthislifehuh/Memorable",
         demo: "#",
         tags: ["Flutter", "TypeScript", "Dart", "ARCore"],
     },
+
 ];
 
 export function PortfolioSection() {
