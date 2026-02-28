@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    webpack: (config, { isServer }) => {
+        config.module.rules.push({
+            test: /\.(glb|gltf)$/,
+            type: "asset/resource",
+        });
+        return config;
+    },
     allowedDevOrigins: ["*.preview.same-app.com"],
     images: {
         unoptimized: true,

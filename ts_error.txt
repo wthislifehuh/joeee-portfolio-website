@@ -1,0 +1,1 @@
+src/components/sections/HeroSection.tsx(7,21): error TS2306: File 'C:/development/Portfolio/joeee-portfolio/src/components/ui/Lanyard.tsx' is not a module.

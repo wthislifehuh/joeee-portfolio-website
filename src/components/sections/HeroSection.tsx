@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Download, MessageCircle, ChevronDown } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import TextPressure from "../ui/TextPressure";
+import Lanyard from "../ui/Lanyard";
+import Aurora from "../ui/Aurora";
 
-const roles = ["Software Engineer", "AI Enthusiast 🤖", "Story Teller", "Matcha Lover 💚", "Cat Lover😻"];
+const roles = ["Software Engineer", "AI Enthusiast", "Story Teller ", "Digital Nomad", "Cat Lover😻", "UTAR Best Graduate 2025", "NZ working holiday alum"];
 
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -39,7 +41,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-10"
+      className="relative min-h-screen flex flex-col justify-center px-4 pt-10 overflow-hidden"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
@@ -47,10 +49,10 @@ export function HeroSection() {
       {/* Content */}
       {/* <div className="relative z-10 text-center max-w-4xl mx-auto"></div> */}
       {/* Content Layout */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-8">
+      <div className="relative z-[20] w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-4 md:px-8 pointer-events-none mt-10 md:mt-0">
 
         {/* Left Column - Text Content */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full pointer-events-auto md:pl-4">
           {/* Greeting */}
           <p className="text-white/80 text-lg md:text-xl mb-4 tracking-wider font-light italic">
             Hello World! I&apos;m
@@ -59,7 +61,7 @@ export function HeroSection() {
           {/* Name */}
           <div style={{ position: 'relative', height: '150px', width: '100%', maxWidth: '100%' }} className="mb-2">
             <TextPressure
-              text="HO JOE EE"
+              text="JOE EE HO"
               flex
               alpha={false}
               stroke={false}
@@ -123,69 +125,65 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column - Hero Illustration */}
-        <div className="flex-1 flex justify-center lg:justify-end w-full mt-8 md:mt-0">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] mx-auto float">
-            {/* Outer glow rings */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl scale-150" />
+        {/* Right Column Spacer (Desktop) */}
+        <div className="hidden md:block flex-1 pointer-events-none opacity-0" />
+      </div>
 
-            {/* Planet rings */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-16 md:h-24 border-y-4 border-pink-300/60 rounded-full transform -rotate-12 shadow-[0_0_30px_rgba(236,72,153,0.4)]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-20 md:h-32 border-y border-purple-300/40 rounded-full transform -rotate-12 shadow-[0_0_20px_rgba(168,85,247,0.3)]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-24 md:h-40 border-y border-cyan-300/20 rounded-full transform -rotate-12" />
-
-            {/* Heart-shaped planet core */}
-            <div className="absolute inset-8 md:inset-12">
-              <div className="w-full h-full relative">
-                {/* Heart shape using CSS */}
-                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_0_25px_rgba(236,72,153,0.5)]">
-                  <defs>
-                    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f472b6" />
-                      <stop offset="50%" stopColor="#d946ef" />
-                      <stop offset="100%" stopColor="#8b5cf6" />
-                    </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                      <feMerge>
-                        <feMergeNode in="coloredBlur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <path
-                    d="M50 88 C20 60, 5 35, 25 20 C35 12, 50 18, 50 30 C50 18, 65 12, 75 20 C95 35, 80 60, 50 88Z"
-                    fill="url(#heartGradient)"
-                    filter="url(#glow)"
-                    className="animate-pulse"
-                    style={{ animationDuration: "4s" }}
-                  />
-                  {/* Planet stripes (decorative) */}
-                  <path d="M 15 45 Q 50 60 85 45" stroke="rgba(255,255,255,0.2)" strokeWidth="3" fill="none" />
-                  <path d="M 20 60 Q 50 75 80 60" stroke="rgba(255,255,255,0.2)" strokeWidth="2" fill="none" />
-                  <path d="M 30 75 Q 50 85 70 75" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-                  {/* Inner shine */}
-                  <ellipse cx="32" cy="30" rx="6" ry="12" fill="rgba(255,255,255,0.4)" transform="rotate(-30 32 30)" />
-                </svg>
-
-                {/* Avatar placeholder on the planet */}
-                <div className="absolute top-1/2 left-1/2 flex items-center justify-center -translate-x-[40%] -translate-y-[60%] text-6xl md:text-[100px] z-10 transform hover:scale-110 transition-transform cursor-pointer drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
-
-                </div>
-              </div>
-            </div>
-
-            {/* Floating particles */}
-            <div className="absolute top-4 left-10 w-3 h-3 bg-pink-400 rounded-full animate-ping" style={{ animationDuration: "2s" }} />
-            <div className="absolute top-16 right-4 w-2 h-2 bg-white rounded-full animate-ping" style={{ animationDuration: "3s", animationDelay: "0.5s" }} />
-            <div className="absolute bottom-16 left-0 w-2 h-2 bg-purple-400 rounded-full animate-ping" style={{ animationDuration: "2.5s", animationDelay: "1s" }} />
-            <div className="absolute bottom-8 right-16 w-3 h-3 bg-pink-300 rounded-full animate-ping" style={{ animationDuration: "3.5s", animationDelay: "0.3s" }} />
+      {/* Desktop Lanyard Overlay (Centered with max-w-6xl to match text container) */}
+      <div className="hidden md:flex absolute inset-0 top[-40px] z-[10] w-full max-w-6xl mx-auto flex-row pointer-events-none px-4 md:px-8">
+        <div className="flex-1 pointer-events-none" /> {/* Left Column Spacer */}
+        {/* Right Column for Lanyard */}
+        <div className="flex-1 relative flex items-center justify-center pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square rounded-full bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-cyan-500/10 blur-[80px]" />
+          <div className="absolute inset-x-0 top-0 bottom-[-40px] z-10 pointer-events-auto">
+            <Lanyard position={[0, 0, 13]} gravity={[0, -40, 0]} />
           </div>
+          {/* Sparkling Galaxy Particles */}
+          <div className="absolute top-[15%] left-[20%] w-2 h-2 bg-white rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_3px_rgba(255,255,255,0.8)]" style={{ animationDuration: "3s" }} />
+          <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-[#06b6d4] rounded-full animate-ping pointer-events-none z-[11] opacity-60" style={{ animationDuration: "4s", animationDelay: "0.5s" }} />
+          <div className="absolute top-[40%] left-[10%] w-1.5 h-1.5 bg-[#e879f9] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_8px_2px_rgba(232,121,249,0.8)]" style={{ animationDuration: "2.5s", animationDelay: "1s" }} />
+          <div className="absolute top-[20%] right-[30%] w-2 h-2 bg-[#8b5cf6] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_12px_3px_rgba(139,92,246,0.6)]" style={{ animationDuration: "3.5s", animationDelay: "0.2s" }} />
+          <div className="absolute bottom-[20%] left-[25%] w-2.5 h-2.5 bg-white rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_15px_4px_rgba(255,255,255,0.9)]" style={{ animationDuration: "2.8s", animationDelay: "1.5s" }} />
+          <div className="absolute bottom-[35%] right-[18%] w-1.5 h-1.5 bg-[#e879f9] rounded-full animate-ping pointer-events-none z-[11] opacity-80" style={{ animationDuration: "3s", animationDelay: "0.8s" }} />
+          <div className="absolute bottom-[45%] left-[15%] w-2 h-2 bg-[#06b6d4] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_2px_rgba(6,182,212,0.8)]" style={{ animationDuration: "4.2s", animationDelay: "0.4s" }} />
+          <div className="absolute top-[50%] right-[10%] w-1 h-1 bg-white rounded-full animate-ping pointer-events-none z-[11] opacity-50" style={{ animationDuration: "2s", animationDelay: "1.2s" }} />
+          <div className="absolute bottom-[10%] right-[35%] w-2 h-2 bg-[#8b5cf6] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" style={{ animationDuration: "3.8s", animationDelay: "0.7s" }} />
+          <div className="absolute top-[10%] left-[40%] w-1.5 h-1.5 bg-[#06b6d4] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_8px_2px_rgba(6,182,212,0.6)]" style={{ animationDuration: "2.2s", animationDelay: "0.9s" }} />
         </div>
       </div>
 
+      {/* Mobile Lanyard Overlay */}
+      <div className="md:hidden absolute inset-0 z-[10] top-[0px] pointer-events-none flex items-center justify-center overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square rounded-full bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-cyan-500/10 blur-[80px]" />
+        <div className="absolute inset-0 z-10 pointer-events-auto">
+          <Lanyard position={[0, 0, 13]} gravity={[0, -40, 0]} />
+        </div>
+        {/* Sparkling Galaxy Particles */}
+        <div className="absolute top-[15%] left-[20%] w-2 h-2 bg-white rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_3px_rgba(255,255,255,0.8)]" style={{ animationDuration: "3s" }} />
+        <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-[#06b6d4] rounded-full animate-ping pointer-events-none z-[11] opacity-60" style={{ animationDuration: "4s", animationDelay: "0.5s" }} />
+        <div className="absolute top-[40%] left-[10%] w-1.5 h-1.5 bg-[#e879f9] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_8px_2px_rgba(232,121,249,0.8)]" style={{ animationDuration: "2.5s", animationDelay: "1s" }} />
+        <div className="absolute top-[20%] right-[30%] w-2 h-2 bg-[#8b5cf6] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_12px_3px_rgba(139,92,246,0.6)]" style={{ animationDuration: "3.5s", animationDelay: "0.2s" }} />
+        <div className="absolute bottom-[20%] left-[25%] w-2.5 h-2.5 bg-white rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_15px_4px_rgba(255,255,255,0.9)]" style={{ animationDuration: "2.8s", animationDelay: "1.5s" }} />
+        <div className="absolute bottom-[35%] right-[18%] w-1.5 h-1.5 bg-[#e879f9] rounded-full animate-ping pointer-events-none z-[11] opacity-80" style={{ animationDuration: "3s", animationDelay: "0.8s" }} />
+        <div className="absolute bottom-[45%] left-[15%] w-2 h-2 bg-[#06b6d4] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_2px_rgba(6,182,212,0.8)]" style={{ animationDuration: "4.2s", animationDelay: "0.4s" }} />
+        <div className="absolute top-[50%] right-[10%] w-1 h-1 bg-white rounded-full animate-ping pointer-events-none z-[11] opacity-50" style={{ animationDuration: "2s", animationDelay: "1.2s" }} />
+        <div className="absolute bottom-[10%] right-[35%] w-2 h-2 bg-[#8b5cf6] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" style={{ animationDuration: "3.8s", animationDelay: "0.7s" }} />
+        <div className="absolute top-[10%] left-[40%] w-1.5 h-1.5 bg-[#06b6d4] rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_8px_2px_rgba(6,182,212,0.6)]" style={{ animationDuration: "2.2s", animationDelay: "0.9s" }} />
+      </div>
+
+      {/* Aurora Background overlaying Lanyard */}
+      <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden opacity-60 mix-blend-screen">
+        <Aurora
+          colorStops={["#e879f9", "#8b5cf6", "#06b6d4"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+
       {/* Social Links on Left absolute positioned */}
-      <div className="hidden xl:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col gap-6 items-center z-20">
+      <div className="hidden xl:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col gap-6 items-center z-[30]">
+        <div className="w-[2px] h-24 bg-white/20 mt-4 rounded-full"></div>
         <a
           href="https://www.linkedin.com/in/joe-ee-ho/"
           target="_blank"
@@ -210,7 +208,7 @@ export function HeroSection() {
       {/* Scroll Down Indicator */}
       <a
         href="#about"
-        className="absolute bottom-24 right-8 flex flex-col items-center gap-2 text-white/60 hover:text-primary transition-colors scroll-indicator"
+        className="absolute bottom-24 right-8 flex flex-col items-center gap-2 text-white/60 hover:text-primary transition-colors scroll-indicator z-[30]"
       >
         <span className="text-xs tracking-widest [writing-mode:vertical-rl]">Scroll Down</span>
         <ChevronDown className="w-4 h-4" />
