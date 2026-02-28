@@ -15,8 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joe Ee Ho",
+  title: "Joe Ee's Portfolio Website",
   description: "Joe Ee Ho's Portfolio",
+  icons: {
+    icon: "/joeee_logo.png",
+    shortcut: "/joeee_logo.png",
+    apple: "/joeee_logo.png",
+  },
 };
 
 export default function RootLayout({
