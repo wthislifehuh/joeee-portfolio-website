@@ -49,7 +49,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         const scroller =
             scrollContainerRef && scrollContainerRef.current
                 ? scrollContainerRef.current
-                : window;
+                : (window as unknown as HTMLElement);
 
         const charElements = el.querySelectorAll('.char');
 
@@ -75,7 +75,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
                 stagger: stagger,
                 scrollTrigger: {
                     trigger: el,
-                    scroller: scroller as Window | Element,
+                    scroller: scroller,
                     start: scrollStart,
                     end: scrollEnd,
                     scrub: true

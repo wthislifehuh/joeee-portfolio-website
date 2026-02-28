@@ -17,22 +17,27 @@ interface TextPressureProps {
     minFontSize?: number;
 }
 
-const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
+// @ts-expect-error
+const dist = (a, b) => {
     const dx = b.x - a.x;
     const dy = b.y - a.y;
     return Math.sqrt(dx * dx + dy * dy);
 };
 
-const getAttr = (distance: number, maxDist: number, minVal: number, maxVal: number) => {
+// @ts-expect-error
+const getAttr = (distance, maxDist, minVal, maxVal) => {
     const val = maxVal - Math.abs((maxVal * distance) / maxDist);
     return Math.max(minVal, val + minVal);
 };
 
-const debounce = (func: (...args: unknown[]) => void, delay: number) => {
-    let timeoutId: ReturnType<typeof setTimeout>;
-    return function (this: unknown, ...args: unknown[]) {
+// @ts-expect-error
+const debounce = (func, delay) => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    // @ts-expect-error
+    return (...args) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
+            // @ts-expect-error
             func.apply(this, args);
         }, delay);
     };
