@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, Send } from "lucide-react";
 import { FaTelegram } from "react-icons/fa";
+import "../ui/Button.css";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -97,10 +98,14 @@ export function ContactSection() {
           </div>
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-all btn-glow mx-auto"
+            className="contact-submit-btn flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-all btn-glow mx-auto"
           >
-            <Send className="w-4 h-4" />
-            Send Message!
+            <div className="svg-wrapper-1">
+              <div className="svg-wrapper">
+                <Send className="w-4 h-4" />
+              </div>
+            </div>
+            <span>Send Message!</span>
           </button>
         </form>
       </div>

@@ -1,0 +1,42 @@
+.contact-submit-btn {
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.contact-submit-btn span {
+    display: block;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.contact-submit-btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-submit-btn:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.contact-submit-btn:hover svg {
+    transform: translateX(4em) rotate(45deg) scale(1.1);
+}
+
+.contact-submit-btn:hover span {
+    transform: translateX(17em);
+}
+
+.contact-submit-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
