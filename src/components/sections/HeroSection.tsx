@@ -84,10 +84,40 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <a
+            {/* <a
               href="/JoeEe_Ho_Resume_2026.pdf"
               download
               className="btn-glow flex items-center justify-center gap-2 px-6 py-3 bg-[#e879f9] text-[#4a044e] rounded-md hover:bg-[#d946ef] transition-all font-semibold text-sm md:text-base border border-transparent shadow-[0_0_15px_rgba(232,121,249,0.3)]"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </a> */}
+            <a
+              href="/JoeEe_Ho_Resume_2026.pdf"
+              download
+              className="
+                group relative overflow-hidden
+                flex items-center justify-center gap-2
+                px-6 py-3
+                bg-transparent border border-white/30
+                text-white
+                rounded-md
+                font-medium text-sm md:text-base
+                transition-all duration-500
+                hover:bg-white/10
+                hover:text-rose-300
+                hover:border-rose-300
+                before:absolute before:w-12 before:h-12 before:content-['']
+                before:right-1 before:top-1 before:z-10
+                before:bg-violet-500 before:rounded-full before:blur-lg
+                before:transition-all before:duration-500
+                hover:before:right-12 hover:before:-bottom-8
+                after:absolute after:z-10 after:w-20 after:h-20
+                after:content-[''] after:bg-rose-300
+                after:right-8 after:top-3 after:rounded-full after:blur-lg
+                after:transition-all after:duration-500
+                hover:after:-right-8
+              "
             >
               <Download className="w-4 h-4" />
               Download Resume
@@ -99,6 +129,8 @@ export function HeroSection() {
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Connect!
             </a>
+
+
           </div>
 
           {/* Tablet/Mobile Social Links */}
