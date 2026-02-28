@@ -14,6 +14,7 @@ export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+
   useEffect(() => {
     const currentText = roles[currentRole];
     const typingSpeed = isDeleting ? 50 : 100;
@@ -41,7 +42,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center px-4 pt-10 overflow-hidden"
+      className="relative min-h-[140vh] md:min-h-screen flex flex-col justify-center px-4 pt-10 overflow-hidden"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
@@ -157,17 +158,17 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column Spacer (Desktop) */}
-        <div className="hidden md:block flex-1 pointer-events-none opacity-0" />
+        {/* Right Column Spacer (Desktop & Mobile) */}
+        <div className="w-full h-[40vh] md:h-auto md:w-auto md:flex-1 pointer-events-none opacity-0" />
       </div>
 
       {/* Desktop Lanyard Overlay (Centered with max-w-6xl to match text container) */}
-      <div className="hidden md:flex absolute inset-0 top[-40px] z-[10] w-full max-w-6xl mx-auto flex-row pointer-events-none px-4 md:px-8">
+      <div className="hidden md:flex absolute inset-0 -top-[40px] z-[10] w-full max-w-6xl mx-auto flex-row pointer-events-none px-4 md:px-8">
         <div className="flex-1 pointer-events-none" /> {/* Left Column Spacer */}
         {/* Right Column for Lanyard */}
         <div className="flex-1 relative flex items-center justify-center pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square rounded-full bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-cyan-500/10 blur-[80px]" />
-          <div className="absolute inset-x-0 top-0 bottom-[-40px] z-10 pointer-events-auto">
+          <div className="absolute w-[1000px] left-1/2 -translate-x-1/2 top-0 bottom-[-40px] z-10 pointer-events-auto overflow-visible">
             <Lanyard position={[0, 0, 13]} gravity={[0, -40, 0]} />
           </div>
           {/* Sparkling Galaxy Particles */}
@@ -185,10 +186,10 @@ export function HeroSection() {
       </div>
 
       {/* Mobile Lanyard Overlay */}
-      <div className="md:hidden absolute inset-0 z-[10] top-[0px] pointer-events-none flex items-center justify-center overflow-hidden">
+      <div className="md:hidden absolute inset-0 z-[10] top-[0px] bottom-[0px] pointer-events-none flex items-center justify-center overflow-visible">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square rounded-full bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-cyan-500/10 blur-[80px]" />
-        <div className="absolute inset-0 z-10 pointer-events-auto">
-          <Lanyard position={[0, 0, 13]} gravity={[0, -40, 0]} />
+        <div className="absolute w-[1000px] left-1/2 -translate-x-1/2 inset-y-0 z-10 pointer-events-auto overflow-visible">
+          <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} />
         </div>
         {/* Sparkling Galaxy Particles */}
         <div className="absolute top-[15%] left-[20%] w-2 h-2 bg-white rounded-full animate-pulse pointer-events-none z-[11] shadow-[0_0_10px_3px_rgba(255,255,255,0.8)]" style={{ animationDuration: "3s" }} />
