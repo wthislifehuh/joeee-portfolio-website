@@ -2,6 +2,7 @@
 
 import ScrollStack, { ScrollStackItem } from '@/components/ui/ScrollStack';
 import Image from 'next/image';
+import { WorkExperienceTimeline } from './experience/WorkExperienceTimeline';
 const aiMlSkills = [
   "LLMs (Gemini, Claude, GPT)",
   "TensorFlow",
@@ -169,45 +170,13 @@ export function ExperienceSection() {
         </div>
 
         {/* Work Experience Section */}
-        <div className="relative mb-[50vh] z-10">
-          <div className="sticky top-[15vh] md:top-[20vh] z-20 text-center mb-12 pointer-events-none">
+        <div className="relative mb-[10vh] z-10">
+          <div className="text-center mb-12 pointer-events-none">
             <p className="text-white/60 text-sm uppercase tracking-widest mb-2 drop-shadow-md">My professional development</p>
             <h2 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">Work Experience</h2>
           </div>
 
-          <ScrollStack className="w-full relative" itemDistance={20} stackPosition="35%" scaleEndPosition="35%" pinEndPosition="8vh" useWindowScroll={true}>
-            {workExperience.map((job) => (
-              <ScrollStackItem key={job.company}>
-                <div
-                  className="card-glow bg-card rounded-2xl p-6 border border-primary/30"
-                >
-                  {/* Company Header */}
-                  <div className="text-center mb-4">
-                    <div className={`w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br ${job.color} flex items-center justify-center text-3xl`}>
-                      {job.icon.startsWith('/') ? (
-                        <Image src={job.icon} alt={job.company} width={64} height={64} className="rounded-xl object-contain" />
-                      ) : (
-                        <span>{job.icon}</span>
-                      )}
-                    </div>
-                    <h4 className="text-lg font-medium text-primary">{job.company}</h4>
-                    <p className="text-white font-semibold">{job.role}</p>
-                    <p className="text-white/60 text-sm">{job.period}</p>
-                  </div>
-
-                  {/* Highlights */}
-                  <ul className="space-y-2">
-                    {job.highlights.map((highlight, index) => (
-                      <li key={`${job.company}-${index}`} className="flex items-start gap-2 text-white/80 text-sm">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
+          <WorkExperienceTimeline experiences={workExperience} />
         </div>
       </div>
     </section>
