@@ -41,7 +41,7 @@ export function AboutSection() {
           {/* About Text */}
           <div className="text-center lg:text-left space-y-4 text-white/80">
             <p>
-              Hello! I&apos;m Joeee, an engineer who are currently focusing on designing and building robust <span className="text-primary">AI-powered workflow, architecture </span> and <span className="text-primary">backend integrations</span> that connect data from ingestion to insight!
+              Hello! I&apos;m Joeee, an engineer who is currently focusing on designing and building robust <span className="text-primary">AI-powered workflow, architecture </span> and <span className="text-primary">backend integrations</span> that connect data from ingestion to insight!
             </p>
             <p>
               I love translating dreams into reality.
