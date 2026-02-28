@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Send } from "lucide-react";
+import { FaTelegram } from "react-icons/fa";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -44,20 +45,20 @@ export function ContactSection() {
             </a>
           </div>
 
-          {/* WhatsApp Card */}
+          {/* Telegram Card */}
           <div className="card-glow bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20 text-center">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-              <span className="text-3xl">📱</span>
+              <FaTelegram className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">WhatsApp</h3>
-            <p className="text-white/60 mb-3">(+60) 177700711</p>
+            <h3 className="text-xl font-semibold text-white mb-2">Telegram</h3>
+            <p className="text-white/60 mb-3">@wthislifehuh</p>
             <a
-              href="https://wa.me/60177700711"
+              href="https://t.me/wthislifehuh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              Chat on WhatsApp
+              Chat on Telegram
             </a>
           </div>
         </div>
