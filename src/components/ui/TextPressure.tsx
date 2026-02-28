@@ -17,27 +17,22 @@ interface TextPressureProps {
     minFontSize?: number;
 }
 
-// @ts-ignore
-const dist = (a, b) => {
+const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
     const dx = b.x - a.x;
     const dy = b.y - a.y;
     return Math.sqrt(dx * dx + dy * dy);
 };
 
-// @ts-ignore
-const getAttr = (distance, maxDist, minVal, maxVal) => {
+const getAttr = (distance: number, maxDist: number, minVal: number, maxVal: number) => {
     const val = maxVal - Math.abs((maxVal * distance) / maxDist);
     return Math.max(minVal, val + minVal);
 };
 
-// @ts-ignore
-const debounce = (func, delay) => {
-    let timeoutId: any;
-    // @ts-ignore
-    return (...args) => {
+const debounce = (func: (...args: unknown[]) => void, delay: number) => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    return function (this: unknown, ...args: unknown[]) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
-            // @ts-ignore
             func.apply(this, args);
         }, delay);
     };
@@ -83,9 +78,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
         };
         const handleTouchMove = (e: TouchEvent) => {
             const t = e.touches[0];
-            // @ts-ignore
             cursorRef.current.x = t.clientX;
-            // @ts-ignore
             cursorRef.current.y = t.clientY;
         };
 
