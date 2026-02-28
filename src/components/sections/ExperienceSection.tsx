@@ -58,7 +58,7 @@ const workExperience = [
   },
   {
     company: "Hilti Asia IT Services",
-    role: "IT Business Analyst/DevOps Engineer Intern",
+    role: "IT Business Analyst/DevOps Engineer Intern (Full Time)",
     period: "Oct 2024 - Jan 2025",
     icon: "/hilti_logo.png",
     color: "from-red-500 to-red-700",
@@ -82,13 +82,24 @@ const workExperience = [
   },
   {
     company: "Axcell Solutions Sdn. Bhd.",
-    role: "Junior Software Developer",
+    role: "Junior Software Developer (Part Time)",
     period: "Nov 2023 - Oct 2024",
     icon: "/axcell_logo.png",
     color: "from-white to-white",
     highlights: [
       "Developed responsive promotional websites using WordPress",
       "Integrated HTML websites with Vue.js, improving reusability by 43%",
+    ],
+  },
+  {
+    company: "Ringo Technologies Sdn. Bhd.",
+    role: "Assistant Software Developer (Part Time)",
+    period: "May 2022 - May 2024",
+    icon: "/ringo_logo.jpg",
+    color: "from-white to-white",
+    highlights: [
+      "Produced system flow documentation and requirements analysis, reducing project planning time by 15%.",
+      "Collaborated with a team of 2 engineers, applying Scrum framework for project management.",
     ],
   },
 ];
