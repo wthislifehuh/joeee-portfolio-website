@@ -6,7 +6,7 @@
 .scroll-stack-inner {
     position: relative;
     width: 100%;
-    padding-bottom: 50vh;
+    padding-bottom: 30vh;
     /* gives enough scrolling runway for the pinned stack */
 }
 

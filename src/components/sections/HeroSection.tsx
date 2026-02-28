@@ -83,7 +83,8 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <a
-              href="#"
+              href="/JoeEe_Ho_Resume_2026.pdf"
+              download
               className="btn-glow flex items-center justify-center gap-2 px-6 py-3 bg-[#e879f9] text-[#4a044e] rounded-md hover:bg-[#d946ef] transition-all font-semibold text-sm md:text-base border border-transparent shadow-[0_0_15px_rgba(232,121,249,0.3)]"
             >
               <Download className="w-4 h-4" />
@@ -93,6 +94,7 @@ export function HeroSection() {
               href="#contact"
               className="btn-glow flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/30 text-white rounded-md hover:bg-white/10 transition-all font-medium text-sm md:text-base"
             >
+              <MessageCircle className="w-4 h-4" />
               Let&apos;s Connect!
             </a>
           </div>
@@ -168,7 +170,7 @@ export function HeroSection() {
 
                 {/* Avatar placeholder on the planet */}
                 <div className="absolute top-1/2 left-1/2 flex items-center justify-center -translate-x-[40%] -translate-y-[60%] text-6xl md:text-[100px] z-10 transform hover:scale-110 transition-transform cursor-pointer drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
-                  �‍💻
+
                 </div>
               </div>
             </div>
