@@ -32,14 +32,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-grab/dist/index.global.js"
-        />
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/same-runtime/dist/index.global.js"
-        />
+        {process.env.NODE_ENV === "development" && (
+          <>
+            <Script
+              crossOrigin="anonymous"
+              src="https://unpkg.com/react-grab/dist/index.global.js"
+              strategy="afterInteractive"
+            />
+            <Script
+              crossOrigin="anonymous"
+              src="https://unpkg.com/same-runtime/dist/index.global.js"
+              strategy="afterInteractive"
+            />
+          </>
+        )}
       </head>
       <body suppressHydrationWarning className="antialiased">
         <ClientBody>{children}</ClientBody>
