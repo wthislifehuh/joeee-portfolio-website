@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joe Ee's Portfolio Website",
-  description: "Joe Ee Ho's Portfolio",
+  title: "Joe Ee's Personal Website",
+  description: "Joe Ee Ho's Personal PortfolioWebsite",
   icons: {
     icon: "/joeee_logo.png",
     shortcut: "/joeee_logo.png",
